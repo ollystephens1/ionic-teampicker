@@ -1,0 +1,8 @@
+{
+  "name": "ionic-teampicker",
+  "app_id": "677b438d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
