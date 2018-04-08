@@ -1,0 +1,37 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{ team.name | uppercase }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let player of team.players; let i = index">
+    <ion-card-header>
+      {{ player.name }}
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ player.position }}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col text-right>
+        <button ion-button 
+                clear 
+                small 
+                *ngIf="!isInSquad(player)"
+                (click)="addToSquad(player)">Add</button>
+        <button ion-button 
+                clear 
+                small 
+                color="danger"
+                *ngIf="isInSquad(player)"
+                (click)="removeFromSquad(player)">Remove</button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

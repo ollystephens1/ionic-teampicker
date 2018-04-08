@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Teams</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h5 text-left>English Premier League</h5>
+  <ion-list>
+    <button 
+      ion-item 
+      *ngFor="let team of teamCollection" 
+      [navPush]="teamPage" [navParams]="team">
+      <ion-icon name="people" item-left></ion-icon>
+      <h2>{{ team.name | uppercase }}</h2>
+      <p>{{ team.players.length }} players</p>
+    </button>
+  </ion-list>
+</ion-content>
